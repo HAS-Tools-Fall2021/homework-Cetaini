@@ -34,7 +34,9 @@ data.loc['1990-01-01']  #find a specific date
 # %%
 # Step 5 - Make a plot of the data
 # Change the numbers on the followin lines to plot a different portion of the data
-ax=data.iloc[400:500]['flow'].plot(linewidth=0.5)
+ax=data.iloc[11900:11935]['flow'].plot(linewidth=0.5)
 ax.set_ylabel('Daily Flow [cfs]')
 ax.set_xlabel('Date')
 
+
+# %%
