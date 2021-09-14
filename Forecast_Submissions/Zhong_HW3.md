@@ -2,6 +2,14 @@ Name: Xiang Zhong
 Date: 9/13/2021
 Assignment Number: 3
 
+___
+### Grade
+3/3: Great work!
+- next time try adding some formatting to your markdown file
+- For questions 2 and 3 I was looking for you to count only the number of times in September that the flow is larger than this. You can check out the solution key to see how I did it.
+- Also I don't see your python script in this file. I found it in your assignment folder but next time be sure to include it here for full credit. 
+_____
+
 1. Describe the variables flow, year, month, and day. What type of objects are they? What data types are they composed of? How long are they?
    They are all lists.
    Flow is composed of floats; year is composed of ints; month of ints; day of ints too.
@@ -14,11 +22,11 @@ Assignment Number: 3
 3. How would your answer to the previous question change if you considered only daily flows in or before 2000? Same question for the flows in or after the year 2010? (again report total number of times and percentage)
    In or before 2000, 3509 times.
    In or after 2010, 3016 times.
-   
+
 
 4. How does the daily flow generally change from the first half of September to the second?
    Daily flow in the first half of September is generally more than the second.
-   
+
 
 I guessed the flow to be 94 because the flow has been decreasing for the last several days, and the forecast says there will still be sunny days for the next couple of days. The next next week to be 85 for the same reason.
 
@@ -76,4 +84,3 @@ for x in range(len(flow)):
                 second.append(flow[x])
 
 np.mean(second)-np.mean(first)
-
