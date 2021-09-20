@@ -2,6 +2,12 @@ Name: Xiang Zhong
 Date: 9/20/2021
 Assignment Number: 4
 
+
+_________
+## Grade: 
+**3/3**: great job! Your script is very clean and easy to folow and I like the logic of your forecast.  Next time add some markdown formatting to your title. If you preview this you will see it is all ending up on one line. If you have questions about how to do the markdown formatting refer to the cheet sheet or feel free to ask me questions.  
+_________
+
 1. Provide a summary of the forecast values you picked and why. Include discussion of the quantitative analysis that lead to your prediction. This can include any analysis you complete but must include at least two histograms and some quantitative discussion of flow quantiles that helped you make your decision.
 - My pick value for next week is 92, the one ahead is still 92. Because I checked the recent trend, and it seems the flow has kind of been frozen to around 92. The median value for last week is 91.3. The quantile for 0, 0.1, 0.5, and 0.9 are 90.8, 91.07, 94.9, 96.88 seperately. I checked the histogram of September for all 33 years and also for 2021 only, they all peaked at around 90.
 
