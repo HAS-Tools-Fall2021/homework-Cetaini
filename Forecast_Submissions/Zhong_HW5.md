@@ -5,7 +5,9 @@
 ### Date: 9/27/2021
 
 ### Assignment Number: 5
-
+_______
+### Grade
+3/3: Awesome job! Great work figuring out the for loop for question 5, that part was tricky. 
 _________
 
         This week my forecast is based on median value for last two weeks (94.9) and last week (101.0). Cloudy weather seems will last for a while, so my forecast value for next week will be 105, and next next week 108.
