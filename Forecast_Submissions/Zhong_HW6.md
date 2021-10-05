@@ -12,7 +12,7 @@ ________
 _________
 
 ### Plot #1
-![picture 1](../../images/d2ee8b08ce14596a9bf599e6a6ae7924495a39f112de0f93ab8334533207ac09.png)  
+![picture 2](../images/d2ee8b08ce14596a9bf599e6a6ae7924495a39f112de0f93ab8334533207ac09.png)  
 
 ![Getting Started](Zhong_HW6_fig1.png)
 
