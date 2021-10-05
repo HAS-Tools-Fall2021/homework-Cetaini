@@ -5,7 +5,10 @@
 ### Date: 10/4/2021
 
 ### Assignment Number: 6
- 
+
+________
+## Grade
+1/3: Nice work, I like your logic here, but your plots didn't come through. We will discuss this in class tomorrow and you can resubmit for full credit. 
 _________
 
 ### Plot #1
