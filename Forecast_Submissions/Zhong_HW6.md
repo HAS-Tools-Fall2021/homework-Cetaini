@@ -13,6 +13,7 @@ _________
 
 ### Plot #1
 ![picture 1](../../images/d2ee8b08ce14596a9bf599e6a6ae7924495a39f112de0f93ab8334533207ac09.png)  
+
 First take a glimpse of the data through its full time series. I have only changed the line style and color, but used a terser syntax. This plot offers a thorough idea of how flows change over time, and there is an obvious annual cycle.
 
 ### Plot #2
