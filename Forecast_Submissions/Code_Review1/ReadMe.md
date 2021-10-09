@@ -30,11 +30,11 @@ The second plot is histograms for historical 10/8-10/15, and for 10/16-10/22. Ta
 The Last plot is a scatterplot between September flow in the current year and which in last year. Try to establish a linear relationship between the two series, and get the third parameter from the predicted value.
 
 ---
-###Summary
+### Summary
 This time I used a weighted average method to get the forecast value, and wrote it as a function. All forecast parameters are extracted from the plots.
 
 ---
-###Code Review:
+### Code Review:
 1. Is the script easy to read and understand?
 - Are variables and functions named descriptively when useful?
 - Are the comments helpful?
