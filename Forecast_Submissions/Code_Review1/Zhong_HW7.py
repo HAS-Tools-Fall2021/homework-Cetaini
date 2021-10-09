@@ -1,0 +1,139 @@
+# This code is for week 7 forecast assignment of HWRS_501
+# HAS_TOOLS class
+# Created by: Xiang Zhong
+# Created on: 10/8/2021
+
+# %%
+# Import the modules we will use
+import os
+import numpy as np
+import pandas as pd
+from scipy import stats
+import statsmodels.formula.api as smf
+import matplotlib.pyplot as plt
+import datetime
+
+# %%
+# Set the file name and path to the data
+filename = 'streamflow_week7.txt'
+filepath = os.path.join('..', '..', 'data', filename)
+
+# %%
+# Read the data into a pandas dataframe
+data = pd.read_table(filepath, sep='\t', skiprows=30, names=['agency_cd',
+                     'site_no', 'datetime', 'flow', 'code'],
+                     parse_dates=['datetime'])
+
+# Expand the dates to year month day
+data['year'] = pd.DatetimeIndex(data['datetime']).year
+data['month'] = pd.DatetimeIndex(data['datetime']).month
+data['day'] = pd.DatetimeIndex(data['datetime']).day
+data['dayofweek'] = pd.DatetimeIndex(data['datetime']).dayofweek
+
+# %%
+# Define the parameters will be used later
+Forecast_parm = np.zeros((2, 3))
+
+# %%
+# Generate Plot #1
+# Time series of flow values for recent two weeks
+fig, ax = plt.subplots()
+ax.plot(data['datetime'], data['flow'], '.-m', label='flow')
+ax.xaxis.set_major_locator(plt.MaxNLocator(4))
+ax.set(title="Observed Flow", xlabel="Date", ylabel="Weekly Avg Flow [cfs]",
+       xlim=[datetime.date(2021, 9, 26), datetime.date(2021, 10, 9)],
+       ylim=[80, 250])
+fig.set_size_inches(5, 3.5)
+fig.savefig("Plot_1.png")
+
+Forecast_parm[:, 0] = np.mean(data.tail(14)['flow'])
+
+# %%
+# Generate Plot #2
+# Histogram of October
+fig, ax = plt.subplots(1, 2)
+
+m = 10
+month_name = ['January', 'February', 'March', "April",
+              'May', 'June', 'July', 'August', 'September',
+              'October', 'November', 'December']
+month_data = data[data['month'] == m]
+
+month_week2_data = month_data[(month_data["day"] <= 17) &
+                              (month_data["day"] > 10)]
+plot_title = month_name[m-1] + "'s Second Week"
+ax[0].hist(month_data['flow'], bins=50, color='steelblue')
+ax[0].set(xlabel='Flow (cfs)', ylabel='Frequency', title=plot_title)
+
+month_week3_data = month_data[(month_data["day"] <= 24) &
+                              (month_data["day"] > 17)]
+plot_title = month_name[m-1] + "'s Third Week"
+ax[1].hist(month_data['flow'], bins=50, color='steelblue')
+ax[1].set(xlabel='Flow (cfs)', ylabel='Frequency', title=plot_title)
+
+fig.set_size_inches(8, 3.5)
+fig.savefig("Plot_2.png")
+
+Forecast_parm[0, 1] = stats.mode(month_week2_data['flow'])[0]
+Forecast_parm[1, 1] = stats.mode(month_week3_data['flow'])[0]
+
+# %%
+# Generate Plot #3
+# Scatterplot of this years flow vs last years flow for September
+Last = data[(data['year'] == 2020) & (data['month'] == 9)]['flow']
+Current = data[(data['year'] == 2021) & (data['month'] == 9)]['flow']
+
+data_reg = pd.DataFrame(list(zip(Last, Current)), columns=['Last', 'Current'])
+model = smf.ols('Current ~ Last', data=data_reg)
+model = model.fit()
+
+fig, ax = plt.subplots()
+
+ax.scatter(data[(data['year'] == 2020) & (data['month'] == 9)].flow,
+           data[(data['year'] == 2021) & (data['month'] == 9)].flow,
+           marker='p', color='Orange')
+ax.set(xlabel='2020 flow', ylabel='2021 flow',
+       title='Flow in September')
+ax.plot(data_reg['Last'],
+        data_reg['Last']*model.params.Last+model.params.Intercept)
+
+fig.set_size_inches(5, 3.5)
+fig.savefig("Plot_3.png")
+
+Forecast_parm[0, 2] = np.mean(data[(data['year'] == 2020) &
+                                   (data['month'] == 10) &
+                                   (data['day'] <= 15) & (data['day'] > 8)]
+                                  ['flow'])*model.params.Last+model.\
+                                  params.Intercept
+Forecast_parm[0, 2] = np.mean(data[(data['year'] == 2020) &
+                                   (data['month'] == 10) & (data['day'] <= 22)
+                                   & (data['day'] > 15)]['flow']) * \
+                                   model.params.Last+model.params.Intercept
+
+
+def cal_forecast(parm_name, weight1, weight2, weight3):
+    """ This function uses weighted average to get
+    the forecast value.
+
+    Parm_name is the parameters gathered for the forecast,
+    and it is expected to be a 1D numpy array.
+
+    Weight1 to 3 are numbers between 0 to 1, and the sum
+    of all weight numbers should equal to 1.
+
+    The output of forecast value has been approximated as
+    an integer.
+    """
+
+    Forecast = weight1*parm_name[0] + weight2*parm_name[1] + \
+        weight3*parm_name[2]
+
+    return(round(Forecast))
+
+
+Forecast_Week1 = cal_forecast(Forecast_parm[0, :], 0.5, 0.2, 0.3)
+print('Forecast value for next week is', Forecast_Week1)
+Forecast_Week2 = cal_forecast(Forecast_parm[1, :], 0.4, 0.2, 0.4)
+print('Forecast value for next next week is', Forecast_Week2)
+
+# %%
