@@ -15,14 +15,14 @@ import datetime
 # ** MODIFY **
 # Set the file name and path to where you have stored the data
 filename = 'streamflow_week6.txt'
-filepath = os.path.join('..','data', filename)
+filepath = os.path.join('..', 'data', filename)
 print(os.getcwd())
 print(filepath)
 
 
 # %%
 # Read the data into a pandas dataframe
-data=pd.read_table(filepath, sep = '\t', skiprows=30,
+data = pd.read_table(filepath, sep='\t', skiprows=30,
         names=['agency_cd', 'site_no', 'datetime', 'flow', 'code'],
         parse_dates=['datetime']
         )
