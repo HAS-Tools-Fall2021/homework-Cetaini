@@ -66,7 +66,7 @@ ax.set(title="Observed Flow", xlabel="Date", ylabel="Weekly Avg Flow [cfs]",
        ylim=[120, 240])
 plt.setp(ax.get_xticklabels(), rotation=45)
 
-fig.set_size_inches(5, 3.5)
+fig.set_size_inches(6, 7)
 fig.savefig("HW8_Plot_1.png")
 
 Forecast_parm[:, 0] = np.mean(data.tail(14)['flow'])
