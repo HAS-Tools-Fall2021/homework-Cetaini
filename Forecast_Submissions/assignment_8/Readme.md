@@ -6,7 +6,18 @@
 
 ### Assignment Number: 8
 
----
+____________
+## Grade:
+### 1. Forecast Submision: 
+**3/3:** Nice work, I like your graphs!
+ 
+### 2. Graded Script
+Refer to [the rubric](https://github.com/HAS-Tools-Fall2021/Course-Materials21/blob/main/Content/Starter_Codes/week7_code_review_rubric.md) for details on scoring: 
+- **Readability: 3/3** Very good. Excellent job with comments and doc strings.
+- **Style: 3/3** No Pep8 errors
+- **Code: 3/3** I was able to run your script with no issies. I like your function and how you are using the regression model really cool!
+____________
+
 
 ### Plot #1
 ![Getting Started](HW8_Plot_1.png)
