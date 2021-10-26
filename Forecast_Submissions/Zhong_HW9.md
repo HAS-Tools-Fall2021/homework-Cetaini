@@ -7,6 +7,10 @@
 ### Assignment Number: 9
 ____________
 
+## Grade:
+**2.5/3:** Good work. I really like how you did the plotting on two axes. I subtracted 0.5 points becuase I don't see where you answer question 2 from the assignment explaining your additional dataset and how you accessed it.  Also, I didn't subtract points but I'm a little curious about your weekly precipitation values. Are they cumulative or something? The pattern in time with the sudden drops is a little odd to me. 
+____________
+
 
 ### Plot #1
 ![Getting Started](HW9_Plot_1.png)
