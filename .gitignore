@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+data/gagesII_9322_point_shapefile/
+
+data/WBD_15_HU2_GDB/WBD_15_HU2_GDB.gdb/
+
+data/WBD_15_HU2_GDB/
