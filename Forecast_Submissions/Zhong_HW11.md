@@ -6,6 +6,10 @@
 
 ### Assignment Number: 11
 
+____
+### Grade
+3/3 - Nice job!  I like how you tried to encorporate this into your linear regression model too. 
+
 ____________
 ### Summary
 This time I still used the weighted average to get the forecast value. The average of recent two weeks are the first parameters. Mode values for historical November's second and third week stream flow are the second parameters. The third parameter is the predicted values from relative humidity. Because the relationship is not significantly linear, I used cases with only RH between 18% and 19% to build the relationship.
