@@ -6,6 +6,9 @@
 
 ### Assignment Number: 14
 ____________
+### Grade
+3/3: Great job!  I'm glad you got something running if not the whole thing. This is a great example of a well documented repo although there are still shortcommings as you say. Environments are a *very* common issue. 
+____________
 ### Summary
 1. What is the paper or project you picked? Include a title, a link the the paper and a 1-2 sentence summary of what its about.
    
