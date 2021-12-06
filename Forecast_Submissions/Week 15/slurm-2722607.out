@@ -1,0 +1,23 @@
+
+Currently Loaded Modules:
+  1) autotools   2) prun/1.3   3) gnu8/8.3.0   4) openmpi3/3.1.4   5) ohpc
+
+ 
+
+This job is running on node r1u12n2.puma.hpc.arizona.edu
+This job is allocated 1 node(s), 4 core(s)/node and 20 Gigabytes of memory
+Zhong_HW15.py:37: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  week1_data['year'] = week1_data.index.year
+Zhong_HW15.py:46: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  week2_data['year'] = week2_data.index.year
+The forecast value for week 1 is:  197
+The forecast value for week 2 is:  194
+Detailed performance metrics for this job will be available at https://metrics.hpc.arizona.edu/#job_viewer?action=show&realm=SUPREMM&resource_id=73&local_job_id=2722607 by 8am on 2021/12/07.
