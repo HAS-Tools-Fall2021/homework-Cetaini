@@ -5,6 +5,11 @@
 ### Date: 12/6/2021
 
 ### Assignment Number: 15
+
+----
+### Grade
+3/3 - Great job! In answer to your question you shouldn't need to request an interactive note to submit a job. Happy to discuss more tomorrow though and definitely bring your additional questions to class. 
+
 ----
 ### Summary
 1. What resources did you request on Ocelote? How long did you wait in the queue for your job to run and how long did it take to run?
